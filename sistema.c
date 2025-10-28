@@ -23,3 +23,5 @@ typedef struct {
     int disponible; // 1 = disponible, 0 = prestado
     Cola* listaEspera; // Cola de IDs de usuarios esperando por este libro
 }tLibro;
+
+// Arbol
