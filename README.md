@@ -1,6 +1,6 @@
 # Sistema de Gestión de Biblioteca en C
 
-Este es un proyecto en C que implementa un sistema básico de gestión de biblioteca. El sistema permite administrar un catálogo de libros, registrar usuarios y gestionar el préstamo y la devolución de libros, utilizando múltiples estructuras de datos combinadas.
+El sistema permite administrar un catálogo de libros, registrar usuarios y gestionar el préstamo y la devolución de libros, utilizando múltiples estructuras de datos combinadas.
 
 ## 📚 Características
 
