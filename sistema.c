@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <stbool.h>
+//#include <stbool.h>
 #include <string.h>
 
 /* Parte TAD */
@@ -9,11 +9,11 @@
 typedef struct NodoCola {
     int idUsuario; //
     struct NodoCola* siguiente;
-} NodoCola;
+}tNodoCola;
 
 typedef struct {
     NodoCola *frente, *final;
-} Cola;
+}tCola;
 
 //Libros
 typedef struct {
@@ -22,4 +22,4 @@ typedef struct {
     char autor[100];
     int disponible; // 1 = disponible, 0 = prestado
     Cola* listaEspera; // Cola de IDs de usuarios esperando por este libro
-} Libro;
+}tLibro;
