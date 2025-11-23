@@ -21,7 +21,7 @@ typedef struct {
     tNodoLibro* librosPrestados; // Lista enlazada de libros que tiene el suario
 } tUsuario;
 
-// Lista general de usuarioss
+// Lista general de usuarios
 
 typedef struct nodoUsuario {
     tUsuario usuario; //datos
@@ -37,7 +37,7 @@ typedef struct {
     int disponible; // 1 = Disponible, 0 = Prestado
 } tLibro;
 
-// Árbol Binario para mostrar libros (catálogo)
+// Arbol Binario para mostrar libros (catalogo)
 
 typedef struct nodoArbol {
     tLibro libro;
@@ -54,7 +54,7 @@ FILE* archivoPuntero;
 void agregarLibroPrestado(tUsuario*, int);
 int quitarLibroPrestado(tUsuario*, int);
 
-//Catálogo
+//Catalogo
 
 tNodoArbol* insertarLibro(tNodoArbol*, tLibro);
 tNodoArbol* buscarLibro(tNodoArbol*, int);
@@ -66,7 +66,7 @@ tNodoUsuario* insertarUsuario(tNodoUsuario*, tUsuario);
 tNodoUsuario* buscarUsuario(tNodoUsuario*, int);
 void mostrarUsuarios(tNodoUsuario*);
 
-//Lógica de negocio
+//Logica de negocio
 
 void prestarLibro(tNodoArbol*, tNodoUsuario*, int, int);
 void devolverLibro(tNodoArbol*, tNodoUsuario*, int, int);
@@ -110,7 +110,7 @@ int quitarLibroPrestado(tUsuario* usuario, int idLibro) {
     return 1;
 }
 
-//Catálogo
+//Catalogo
 
 tNodoArbol* insertarLibro(tNodoArbol* raiz, tLibro pLibro) {
     if (raiz == NULL) {
@@ -191,7 +191,7 @@ void mostrarUsuarios(tNodoUsuario* cabeza) {
     }
 }
 
-//Lógica de negocio
+//Logica de negocio
 
 void prestarLibro(tNodoArbol* raizLibros, tNodoUsuario* cabezaUsuarios, int idLibro, int idUsuario) {
     tNodoArbol* nodoLibro = buscarLibro(raizLibros, idLibro);
@@ -245,7 +245,7 @@ void guardarLibrosRec(tNodoArbol* raiz) {
 }
 
 void guardarTodo(tNodoArbol* raiz, tNodoUsuario* lista) {
-    // 1. GUARDAR LIBROS (Árbol -> Archivo)
+    // 1. GUARDAR LIBROS (arbol -> Archivo)
     archivoPuntero = fopen("libros.dat", "wb");
     if (archivoPuntero != NULL) {
         guardarLibrosRec(raiz);
@@ -262,7 +262,7 @@ void guardarTodo(tNodoArbol* raiz, tNodoUsuario* lista) {
             // Guardamos la estructura base del usuario
             fwrite(&(lista->usuario), sizeof(tUsuario), 1, archivoPuntero);
             
-            // Contamos cuántos libros tiene para saber cuántos guardar
+            // Contamos cuantos libros tiene para saber cuantos guardar
             int cant = 0;
             tNodoLibro* aux = lista->usuario.librosPrestados;
             while(aux) { 
