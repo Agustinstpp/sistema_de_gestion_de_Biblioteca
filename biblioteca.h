@@ -3,7 +3,6 @@
 #include <string.h>
 
 #define MAX 100
-
 // --ESTRUCTURAS--
 
 // Lista de libros (ID) que tiene cada usuario
